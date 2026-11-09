@@ -1,0 +1,36 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Misura sensore",
+    "type": "object",
+    "required": [ "id_sensore", "timestamp", "tipo_carico", "temperatura_c" ],
+    "properties": {
+        "id_sensore": {
+            "type": "string",
+            "pattern": "^[A-Z]+[A-Z]{2}-[0-9]{3}$"
+        },
+        "timestamp": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "tipo_carico": {
+            "type": "string",
+            "enum": [ "farmaci", "alimentari", "surgelati" ]
+        },
+        "temperatura_c": {
+            "type": "number",
+            "minimum": -40,
+            "maximum": 40
+        },
+        "umidita": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+        },
+        "batteria": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+        }
+    },
+    "additionalProperties": false
+}

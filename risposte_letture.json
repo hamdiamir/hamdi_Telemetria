@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Richiesta letture",
+    "type": "object",
+    "required": [ "id_sensore" ],
+    "properties": {
+        "id_sensore": { "type": "string" },
+        "limite": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+        }
+    },
+    "additionalProperties": false
+}
